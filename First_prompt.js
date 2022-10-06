@@ -9,3 +9,27 @@
 // Output: "Jasmine%20Ann%20Jones"
 
 //Questions: Can I use javaScript?
+
+//  name the function turnIntoUrl(string)
+// declare stringUrlArray and split it
+// declare an empty res array
+//  for loop where should be compared currient  elements of the array with empty space " "
+// If stringUrlArray[i] === " " then res.push("%20")
+// else push currient element
+// return res array and join it
+
+// Iterative
+const turnIntoUrl = (string) => {
+  const stringUrlArray = string.split("");
+  let res = [];
+  for (i = 0; i < stringUrlArray.length; i++) {
+    if (stringUrlArray[i] === " ") {
+      res.push("%20");
+    } else {
+      res.push(stringUrlArray[i]);
+    }
+  }
+  return res.join("");
+};
+
+// Recursion
