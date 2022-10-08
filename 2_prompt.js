@@ -1,5 +1,6 @@
 // Question #2: Array Deduping
-// Write an algorithm that removes duplicates from an array. Do not use a function like filter() to solve this. Once you have solved the problem, demonstrate how it can be solved with filter(). Solve the problem with and without recursion.
+// Write an algorithm that removes duplicates from an array. Do not use a function like filter() to solve this.
+//  Once you have solved the problem, demonstrate how it can be solved with filter(). Solve the problem with and without recursion.
 
 // Example
 // Input: [7, 9, "hi", 12, "hi", 7, 53]
@@ -55,3 +56,22 @@ const removeDuplicateFilter = (duplicateArray) => {
 //"element: hi outer loop index: 4 inner loop found index: 2"
 
 console.log(removeDuplicateFilter([7, 9, "hi", 12, "hi", 7, 53, 7, 9]));
+
+// Recursion approach
+//check if array contains elements
+//termination case - if in givin array no elements that stop the recursion
+//
+const removeDuplicateRecursion = (arr) => {
+  if (Array.isArray(arr)) {
+    return `is not an array.`;
+  }
+  if (arr.length === 0) {
+    return [];
+  } else {
+    const currentElement = arr[0];
+    const theRestOfArray = arr.filter((el) => {
+      return el != currentElement;
+    });
+    return [currentElement, ...removeDuplicateRecursion(theRestOfArray)];
+  }
+};
