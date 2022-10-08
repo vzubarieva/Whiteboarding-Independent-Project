@@ -7,7 +7,7 @@
 
 // Output: [7, 9, "hi", 12, 53]
 
-// Questions: For strings does "hi" equal "Hi" or are those two distinct?
+// Questions: For strings does "hi" equal "Hi" or are those two distinct? Can I use javaScript? Can I use javaScript?
 
 //declare the function and pass  duplicateArray as an argument
 // declare empty array res, to store result array

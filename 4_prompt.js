@@ -12,6 +12,8 @@
 
 // Output: true
 
+//Questions : Can I use javaScript?
+
 // declare the function and pass string as an argument
 // check if string is string
 // outer loop iterate from the first element

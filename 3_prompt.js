@@ -22,7 +22,7 @@
 //else push into res counting elementCount variable if its more then 1 and current element and reset elementCounter to 1
 // return res.join("")
 
-const compressingString1 = (string) => {
+const compressingString = (string) => {
   if (typeof string != "string") {
     return "Please enter a string.";
   } else {
@@ -45,3 +45,40 @@ const compressingString1 = (string) => {
     return res.join("");
   }
 };
+
+console.log(compressionString("aaabccdddda")); //Output: "3ab2c4da"
+
+////Recursive approach
+
+// check if string is type of string
+// termination case - stop when string is empty
+// declare element as current element
+//declare next element - string[1]
+// boolean variable that store condition if elements are equal
+// variable rest where is rest of the string without current element
+//if elements are equal call function where rest of the string and reset counter to 1
+// if elements are not equal and if its less then 1 return currentElement without counter or return counter and current element
+
+const compressionStringRecursion = (string, countElements = 1) => {
+  if (typeof string === string) {
+    return `Please add string`;
+  } else {
+    if (string === "") {
+      return "";
+    } else {
+      const element = string[0];
+      const nextElement = string[1];
+      const elementsAreEqual = element === nextElement;
+      const rest = string.substring(1);
+      console.log(`element: ${element}; nextElement: ${nextElement}`);
+      if (elementsAreEqual) {
+        return compressionStringRecursion(rest, countElements + 1);
+      }
+      return `${
+        countElements > 1 ? countElements : ""
+      }${element}${compressionStringRecursion(rest)}`;
+    }
+  }
+};
+
+console.log(compressionStringRecursion("aaabccdddda")); //Output: "3ab2c4da"

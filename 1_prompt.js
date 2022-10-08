@@ -10,7 +10,7 @@
 
 //Questions: Can I use javaScript?
 
-//  name the function turnIntoUrl(string)
+// name the function turnIntoUrl(string)
 // declare stringUrlArray and split it
 // declare an empty res array
 //  for loop where should be compared current  elements of the array with empty space " "
@@ -33,6 +33,13 @@ const turnIntoUrl = (string) => {
 };
 
 // Recursion
+
+// declare the function and pass string as an argument
+// check if string is of type string
+// termination case - stop when string is empty
+// declare a variable for first letter
+// a variable that store if first letter equal space then replace it with "%20" else use first letter
+//return replaceOneLetter value with added result of our function called with argument equal to the  rest of the string
 
 const turnIntoUrlRecursion = (string) => {
   if (typeof string != "string") {
