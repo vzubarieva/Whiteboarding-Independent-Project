@@ -13,9 +13,9 @@
 //  name the function turnIntoUrl(string)
 // declare stringUrlArray and split it
 // declare an empty res array
-//  for loop where should be compared currient  elements of the array with empty space " "
+//  for loop where should be compared current  elements of the array with empty space " "
 // If stringUrlArray[i] === " " then res.push("%20")
-// else push currient element
+// else push current element
 // return res array and join it
 
 // Iterative
@@ -33,3 +33,17 @@ const turnIntoUrl = (string) => {
 };
 
 // Recursion
+
+const turnIntoUrlRecursion = (string) => {
+  if (typeof string != "string") {
+    return "Please enter a string.";
+  } else {
+    if (string === "") {
+      return "";
+    } else {
+      const oneLetter = string[0];
+      const replacedOneLetter = oneLetter === " " ? "%20" : oneLetter;
+      return replacedOneLetter + turnIntoUrlRecursion(string.substring(1));
+    }
+  }
+};
