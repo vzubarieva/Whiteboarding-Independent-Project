@@ -58,11 +58,15 @@ const removeDuplicateFilter = (duplicateArray) => {
 console.log(removeDuplicateFilter([7, 9, "hi", 12, "hi", 7, 53, 7, 9]));
 
 // Recursion approach
-//check if array contains elements
-//termination case - if in givin array no elements that stop the recursion
-//
+
+//check if array is array
+//termination case - if in given array no elements then stop the recursion
+//declare currentElement  variable ;
+//declare theRestOfTheArray where callback function which filtered if element is not the same as current element
+//return array where function will filter array and show copied array without duplicates
+
 const removeDuplicateRecursion = (arr) => {
-  if (Array.isArray(arr)) {
+  if (!Array.isArray(arr)) {
     return `is not an array.`;
   }
   if (arr.length === 0) {
