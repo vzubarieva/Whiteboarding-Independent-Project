@@ -11,7 +11,7 @@
 // You may implement any of the above algorithms (or your own) to solve the problem — as long as it doesn't use sort().
 
 // Example
-// Input: [9, 2, 7, 12]
+// Input: [9, 2,  7, 12]
 
 // Output: [2, 7, 9, 12]
 
@@ -27,20 +27,26 @@
 //Increment the left pointer and decrement the right pointer.
 //If index of left pointer is still less than the index of the right pointer, then repeat the process; else return the index of the left pointer.
 
+//var items = [9,2,7,12];
+
 function partition(items, left, right) {
-  var pivot = items[Math.floor((right + left) / 2)], //middle element  //2
-    i = left, //left pointer 12
-    j = right; //right pointer 9
+  var pivot = items[Math.floor((right + left) / 2)], //middle element  2 , 7
+    i = left, //left pointer index of9 =0 , index =0
+    j = right; //right pointer  index of12 =3, index =1
+  console.log(`pivot: ${pivot}, i:${i}, j:${j}`);
   while (i <= j) {
-    //12 > 9
+    //index 0 < index 3 , index 0 < 1
     while (items[i] < pivot) {
+      console.log(`i:${i}`);
       i++;
     }
     while (items[j] > pivot) {
+      console.log(` j:${j}`);
       j--;
     }
     if (i <= j) {
       swap(items, i, j); //swapping two elements
+      console.log(` i:${i}, j:${j}`);
       i++;
       j--;
     }
